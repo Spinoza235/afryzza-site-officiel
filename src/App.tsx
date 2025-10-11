@@ -5,6 +5,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css'
 import Footer from './components/Footer'
 import  Home from './pages/Home';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
         <Routes>
          
           <Route path="/" element={<Home/>} />
-           
-
+          
+         <Route path="/contact" element={<Contact/>} />
         </Routes>
       </main>
       

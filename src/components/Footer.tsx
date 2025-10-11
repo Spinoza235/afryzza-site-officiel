@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
   const socialLinks = [
     {
       icon: Facebook,
-      href: "https://web.facebook.com/hamedluchardor.mefire?",
+      href: "https://web.facebook.com/hamedluchardor.mefire",
       label: "Facebook",
     },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
