@@ -1,4 +1,3 @@
-import React from "react";
 import { ArrowRight, Rocket, Palette, Code, Brush, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
