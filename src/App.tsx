@@ -1,15 +1,11 @@
-import './App.css'
+import Services from "./pages/Services";
 
 function App() {
-
-
   return (
-    <>
-    <h1 className="text-3xl bg-amber-400 p-4 font-bold underline rounded-b-4xl">
-       Hello world!
-    </h1>
-    </>
-  )
+    <div>
+      <Services />
+    </div>
+  );
 }
 
-export default App
+export default App;
