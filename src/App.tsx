@@ -1,8 +1,8 @@
 // src/App.tsx
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 
-import './App.css'
+import Services from "./pages/Services";
 import Footer from './components/Footer'
 import  Home from './pages/Home';
 import Contact from './pages/Contact';
@@ -16,6 +16,7 @@ function App() {
         <Routes>
          
           <Route path="/" element={<Home/>} />
+          <Route path="/service" element={<Services/>} />
           
          <Route path="/contact" element={<Contact/>} />
         </Routes>
@@ -28,4 +29,4 @@ function App() {
    
 }
 
-export default App;
+export default App
