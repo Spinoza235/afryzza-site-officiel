@@ -1,6 +1,5 @@
 import { ServiceCard } from "../components/ServiceCard";
 import { Palette, Globe, FileText } from "lucide-react";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import '../App.css';
 
 export default function App() {

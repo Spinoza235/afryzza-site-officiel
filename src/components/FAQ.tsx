@@ -2,12 +2,10 @@ import { useState, useEffect } from "react";
 import type { ChangeEvent, JSX } from "react";
 import {
   ChevronDown,
-  ChevronUp,
   Mail,
   Monitor,
   Paintbrush,
   LifeBuoy,
-  Lock,
   Search,
   Globe,
   X,

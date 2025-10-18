@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { Card, CardContent, CardDescription, CardHeader } from "./ui/card";
 import { Button } from "./ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
@@ -27,7 +27,7 @@ export function ServiceCard({
   pricing,
   imageUrl,
 }: ServiceCardProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
+
 
   return (
     <Card className="flex flex-col justify-between overflow-hidden hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 border-white/10 bg-card h-full">
