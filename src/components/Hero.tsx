@@ -1,4 +1,3 @@
-import React from "react";
 import { ArrowRight, Rocket, Palette, Code, Brush, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -6,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-gradient-to-br from-[#0A1A3F] via-[#0E225A] to-[#05102A] text-white pt-5"
+      className="relative my-10 overflow-hidden bg-gradient-to-br from-[#0A1A3F] via-[#0E225A] to-[#05102A] text-white pt-5"
     >
       {/* Halo lumineux décoratif */}
       <div className="absolute -top-56 -right-56 w-[600px] h-[600px] sm:w-[700px] sm:h-[700px] bg-gradient-to-tr from-blue-500 via-indigo-500 to-emerald-400 opacity-25 blur-[180px] rounded-full pointer-events-none" />

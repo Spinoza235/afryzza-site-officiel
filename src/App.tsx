@@ -7,17 +7,20 @@ import Footer from './components/Footer'
 import  Home from './pages/Home';
 import Contact from './pages/Contact';
 import ErrorPage from './pages/ErrorPage';
+import Realisations from './pages/Realisations';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Contenu principal avec flex-grow pour pousser le footer en bas */}
-  
-      <main className="flex-grow">
+     <Header/>
+      <main className="flex-grow py-4">
         <Routes>
          
           <Route path="/" element={<Home/>} />
-          <Route path="/service" element={<Services/>} />
+          <Route path="/realisations" element={<Realisations/>} />
+          <Route path="/services" element={<Services/>} />
           <Route path="*" element={<ErrorPage/>} />
          <Route path="/contact" element={<Contact/>} />
         </Routes>
