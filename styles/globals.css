@@ -1,7 +1,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --font-size: 16px;
+  --font-size: 24px;
   --background: #0A1A3F;
   --foreground: #ffffff;
   --card: #132A5E;
