@@ -1,6 +1,6 @@
 import { ServiceCard } from "../components/ServiceCard";
 import { Palette, Globe, FileText } from "lucide-react";
-import '../App.css';
+import '../index.css';
 
 export default function App() {
   const services = [

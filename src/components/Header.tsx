@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"; 
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
@@ -58,12 +59,14 @@ export default function Header() {
           ))}
 
           {/* CTA */}
-          <a
-            href="/contact"
+          <Link to="/contact">
+          <button
+            
             className="ml-4 inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-400 text-white font-semibold shadow-md hover:scale-105 hover:shadow-blue-500/25 transition-all duration-300"
           >
             Demander un devis
-          </a>
+          </button>
+         </Link>
         </nav>
 
         {/* --- Bouton Mobile --- */}
