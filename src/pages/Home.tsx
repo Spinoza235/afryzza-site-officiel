@@ -1,17 +1,18 @@
-import React from "react";
-import Footer from "../components/Footer";
 
-const Home: React.FC = () => {
+import Hero from "../components/Hero";
+import Testimonials from "../components/Testimonials";
+import Pricing from "../components/Pricing";
+import FAQ from "../components/FAQ";
+import WhyAfryzza from "../components/WhyAfryzza";
+
+export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Contenu principal fictif pour pousser le footer en bas */}
-      <main className="flex-grow flex items-center justify-center">
-        <h1 className="text-3xl font-bold">Page de test du Footer</h1>
-      </main>
-
-   
-    </div>
+    <main className="bg-[#0A1A3F] text-white overflow-hidden">
+      <Hero />
+      <Pricing />
+      <Testimonials />
+      <WhyAfryzza />
+      <FAQ />
+    </main>
   );
-};
-
-export default Home;
+}
