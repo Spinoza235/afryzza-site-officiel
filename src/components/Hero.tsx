@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-14 items-center relative z-10">
         {/* === Bloc texte === */}
         <motion.header
-          className="text-center lg:text-left space-y-6 sm:space-y-8"
+           className="text-center lg:text-left space-y-6 sm:space-y-8"
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
