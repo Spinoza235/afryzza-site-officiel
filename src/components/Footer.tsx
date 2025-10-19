@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-slate-800 text-gray-300 text-sm">
+    <footer className="bg-slate-800 text-gray-300 text-sm ">
       <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-slate-700">
         {/* Bloc gauche : logo + slogan */}
     <div className="text-center md:text-left">

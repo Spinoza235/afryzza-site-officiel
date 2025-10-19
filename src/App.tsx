@@ -8,7 +8,8 @@ import  Home from './pages/Home';
 import Contact from './pages/Contact';
 import ErrorPage from './pages/ErrorPage';
 import Realisations from './pages/Realisations';
-import Header from './components/Header';
+import Header from './components/layouts/Header'
+import About from './pages/About'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/realisations" element={<Realisations/>} />
           <Route path="/services" element={<Services/>} />
+           <Route path="/about" element={<About/>} />
           <Route path="*" element={<ErrorPage/>} />
          <Route path="/contact" element={<Contact/>} />
         </Routes>
