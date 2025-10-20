@@ -20,11 +20,11 @@ export default function App() {
         },
         {
           step: "Affinage",
-          description: "Vous sélectionnez votre concept préféré et nous le perfectionnons selon vos retours jusqu’à obtenir un résultat parfait."
+          description: "Vous sélectionnez votre concept préféré et nous le perfectionnons selon vos retours jusqu'à obtenir un résultat parfait."
         },
         {
           step: "Livraison",
-          description: "Recevez votre logo final dans plusieurs formats (PNG, SVG, PDF) accompagné d’un guide de marque et des spécifications de couleur."
+          description: "Recevez votre logo final dans plusieurs formats (PNG, SVG, PDF) accompagné d'un guide de marque et des spécifications de couleur."
         }
       ],
       features: [
@@ -73,7 +73,7 @@ export default function App() {
     },
     {
       title: "Conception de Flyers",
-      description: "Des flyers percutants pour particuliers et entreprises, conçus pour attirer l’attention et faire passer votre message efficacement.",
+      description: "Des flyers percutants pour particuliers et entreprises, conçus pour attirer l'attention et faire passer votre message efficacement.",
       icon: <FileText className="w-6 h-6" />,
       imageUrl: "https://images.unsplash.com/photo-1695634621375-0b66a9d5d1bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmbHllciUyMGRlc2lnbnxlbnwxfHx8fDE3NjAzMzc3Njh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       procedures: [
@@ -91,12 +91,12 @@ export default function App() {
         },
         {
           step: "Livraison finale",
-          description: "Recevez des fichiers prêts à l’impression (PDF, TIFF) et des versions numériques (PNG, JPG) optimisées pour la diffusion en ligne."
+          description: "Recevez des fichiers prêts à l'impression (PDF, TIFF) et des versions numériques (PNG, JPG) optimisées pour la diffusion en ligne."
         }
       ],
       features: [
         "2 à 3 concepts de design initiaux",
-        "Formats numériques et prêts à l’impression",
+        "Formats numériques et prêts à l'impression",
         "Tailles personnalisées (A4, A5, sur mesure)",
         "Délai de livraison rapide (3 à 5 jours ouvrés)"
       ],
@@ -105,15 +105,17 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ background: '#0A1A3F' }}>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-blue-50 to-indigo-100 dark:from-[#08152C] dark:via-[#0A1A3F] dark:to-[#0E225A] transition-colors duration-500">
 
       {/* Section Services */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="mb-3 text-white">Nos Services</h2>
+            <h2 className="mb-3 text-gray-900 dark:text-white text-3xl sm:text-4xl font-extrabold">
+              Nos Services
+            </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-400 mx-auto mb-4 rounded-full" />
-            <p className="text-white/70 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-white/70 max-w-2xl mx-auto text-lg">
               Découvrez notre gamme complète de services créatifs conçus pour propulser votre marque et atteindre vos objectifs.
             </p>
           </div>
@@ -126,26 +128,26 @@ export default function App() {
         </div>
       </section>
 
-      {/* Section d’appel à l’action */}
+      {/* Section d'appel à l'action */}
       <section className="py-16 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-400 opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-emerald-400/10 dark:from-blue-500/20 dark:via-indigo-500/20 dark:to-emerald-400/20" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="mb-4 text-white">Prêt à démarrer votre projet ?</h2>
-          <p className="text-white/70 mb-8">
-            Donnez vie à vos idées dès aujourd’hui. Contactez-nous pour une consultation gratuite et un devis personnalisé.
+          <h2 className="mb-4 text-gray-900 dark:text-white text-2xl sm:text-3xl font-extrabold">
+            Prêt à démarrer votre projet ?
+          </h2>
+          <p className="text-gray-600 dark:text-white/70 mb-8 text-lg">
+            Donnez vie à vos idées dès aujourd'hui. Contactez-nous pour une consultation gratuite et un devis personnalisé.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-400 text-white rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20">
+            <button className="px-8 py-3 bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-400 text-white rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20 dark:shadow-blue-500/30 font-semibold">
               Nous contacter
             </button>
-            <button className="px-8 py-3 border border-white/20 text-white rounded-lg hover:bg-white/5 transition-colors backdrop-blur-sm">
+            <button className="px-8 py-3 border border-gray-300 dark:border-white/20 text-gray-700 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition-colors backdrop-blur-sm font-semibold">
               Voir notre portfolio
             </button>
           </div>
         </div>
       </section>
-
-      
     </div>
   );
 }

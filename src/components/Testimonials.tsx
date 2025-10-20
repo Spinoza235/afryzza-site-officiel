@@ -29,10 +29,13 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative bg-gradient-to-b from-[#0E225A] via-[#0A1A3F] to-[#08152C] text-white py-10 overflow-hidden"
+      className="relative 
+      bg-gradient-to-b from-gray-50 via-blue-50 to-indigo-50 
+      dark:from-[#0E225A] dark:via-[#0A1A3F] dark:to-[#08152C] 
+      text-gray-900 dark:text-white py-10 overflow-hidden transition-colors duration-500"
     >
       {/* Halo décoratif */}
-      <div className="absolute -top-40 right-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-blue-500 via-indigo-500 to-emerald-400 opacity-10 blur-[200px]" />
+      <div className="absolute -top-40 right-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-blue-400 via-indigo-400 to-emerald-300 opacity-20 dark:opacity-10 blur-[200px]" />
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
         {/* En-tête */}
@@ -42,19 +45,22 @@ export default function Testimonials() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-sm font-medium backdrop-blur-sm">
-            <Sparkles className="w-4 h-4 text-blue-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full 
+            bg-blue-100 dark:bg-blue-500/10 
+            border border-blue-200 dark:border-blue-400/30 
+            text-blue-700 dark:text-blue-300 text-sm font-medium backdrop-blur-sm">
+            <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
             Témoignages Clients
           </div>
 
           <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
             Ce que disent nos{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-500 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-500 bg-clip-text text-transparent">
               clients satisfaits
             </span>
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Découvrez les retours de ceux qui nous font confiance pour leur
             transformation digitale.
           </p>
@@ -69,19 +75,24 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: i * 0.2 }}
               viewport={{ once: true }}
-              className="relative flex flex-col items-start text-left rounded-2xl border border-blue-500/20 bg-gradient-to-br from-[#0B1B3D]/60 to-[#0A1A3F]/30 p-6 sm:p-8 shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
+              className="relative flex flex-col items-start text-left rounded-2xl 
+                border border-blue-200 dark:border-blue-500/20 
+                bg-gradient-to-br from-white to-gray-50 
+                dark:from-[#0B1B3D]/60 dark:to-[#0A1A3F]/30 
+                p-6 sm:p-8 shadow-lg hover:shadow-blue-500/20 
+                transition-all duration-300"
             >
               {/* Icône de citation */}
-              <Quote className="w-8 h-8 text-blue-400 mb-4 opacity-70" />
+              <Quote className="w-8 h-8 text-blue-500 dark:text-blue-400 mb-4 opacity-70" />
 
               {/* Texte du témoignage */}
-              <p className="text-gray-300 leading-relaxed text-sm sm:text-base mb-6">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base mb-6">
                 “{t.text}”
               </p>
 
               {/* Infos client */}
               <div className="flex items-center gap-4 mt-auto">
-                {/* Initiale dans un cercle coloré */}
+                {/* Initiale */}
                 <div
                   className={`flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br ${t.color} text-white font-bold text-lg border border-white/10 shadow-md`}
                 >
@@ -90,15 +101,15 @@ export default function Testimonials() {
 
                 {/* Détails */}
                 <div>
-                  <h4 className="font-semibold text-white">{t.name}</h4>
-                  <p className="text-gray-400 text-sm">{t.role}</p>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">{t.name}</h4>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">{t.role}</p>
                   <div className="flex mt-1">
                     {Array(t.rating)
                       .fill(0)
                       .map((_, i) => (
                         <Star
                           key={i}
-                          className="w-4 h-4 text-yellow-400 fill-yellow-400"
+                          className="w-4 h-4 text-yellow-500 dark:text-yellow-400 fill-yellow-400"
                         />
                       ))}
                   </div>

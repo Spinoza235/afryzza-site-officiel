@@ -117,12 +117,12 @@ export default function Realisations(): JSX.Element {
 
   const getCategoryBadgeClass = (category: string): string => {
     if (category === "logo") {
-      return "bg-purple-500/20 text-purple-300 border border-purple-500/30";
+      return "bg-purple-500/20 text-purple-700 dark:text-purple-300 border border-purple-500/30";
     }
     if (category === "web") {
-      return "bg-blue-500/20 text-blue-300 border border-blue-500/30";
+      return "bg-blue-500/20 text-blue-700 dark:text-blue-300 border border-blue-500/30";
     }
-    return "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";
+    return "bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30";
   };
 
   const getCategoryLabel = (category: string): string => {
@@ -152,7 +152,7 @@ export default function Realisations(): JSX.Element {
         className={`flex items-center gap-3 px-6 py-3 rounded-xl text-base font-semibold transition-all duration-300 border backdrop-blur-sm ${
           activeFilter === category.value
             ? "bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-400 text-white shadow-lg shadow-blue-500/25 border-transparent"
-            : "bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20"
+            : "bg-white/5 dark:bg-white/5 border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10 hover:border-gray-400 dark:hover:border-white/20"
         }`}
         aria-pressed={activeFilter === category.value}
         type="button"
@@ -162,7 +162,7 @@ export default function Realisations(): JSX.Element {
         <span className={`px-2 py-1 rounded-full text-xs ${
           activeFilter === category.value 
             ? "bg-white/20" 
-            : "bg-white/10"
+            : "bg-gray-200 dark:bg-white/10 text-gray-600 dark:text-gray-300"
         }`}>
           {category.count}
         </span>
@@ -174,7 +174,7 @@ export default function Realisations(): JSX.Element {
     return filteredProjects.map((project, index) => (
       <motion.div
         key={project.id}
-        className="group flex flex-col h-full bg-gradient-to-br from-white/5 to-white/0 rounded-2xl overflow-hidden border border-white/10 hover:border-white-20 shadow-xl hover:shadow-2xl transition-all duration-500 backdrop-blur-sm"
+        className="group flex flex-col h-full bg-white dark:bg-gradient-to-br dark:from-white/5 dark:to-white/0 rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white-20 shadow-xl hover:shadow-2xl transition-all duration-500 backdrop-blur-sm"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -200,7 +200,7 @@ export default function Realisations(): JSX.Element {
             </span>
           </div>
 
-          <div className="absolute top-4 right-4 px-2.5 py-1 rounded-lg bg-black/40 backdrop-blur-sm text-xs font-medium">
+          <div className="absolute top-4 right-4 px-2.5 py-1 rounded-lg bg-black/40 backdrop-blur-sm text-xs font-medium text-white">
             {project.year}
           </div>
 
@@ -215,11 +215,11 @@ export default function Realisations(): JSX.Element {
         </div>
 
         <div className="flex flex-col flex-grow p-6">
-          <h3 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-blue-300 transition-colors duration-300">
+          <h3 className="text-xl font-bold mb-3 line-clamp-2 text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors duration-300">
             {project.title}
           </h3>
           
-          <p className="text-gray-400 text-sm mb-4 line-clamp-2 flex-grow">
+          <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2 flex-grow">
             {project.description}
           </p>
 
@@ -227,7 +227,7 @@ export default function Realisations(): JSX.Element {
             {project.technologies.slice(0, 3).map((tech) => (
               <span 
                 key={tech}
-                className="px-2 py-1 bg-white/5 rounded-lg text-xs text-gray-300 border border-white/5"
+                className="px-2 py-1 bg-gray-100 dark:bg-white/5 rounded-lg text-xs text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/5"
               >
                 {tech}
               </span>
@@ -236,7 +236,7 @@ export default function Realisations(): JSX.Element {
 
           <button 
             onClick={() => handleProjectClick(project.id)}
-            className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-sm font-medium transition-all duration-300 group/btn mt-auto"
+            className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 border border-gray-300 dark:border-white/10 hover:border-gray-400 dark:hover:border-white/20 text-sm font-medium transition-all duration-300 group/btn mt-auto text-gray-700 dark:text-gray-300"
             type="button"
           >
             <span>Voir le projet</span>
@@ -257,7 +257,7 @@ export default function Realisations(): JSX.Element {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="text-gray-400 text-lg">
+      <div className="text-gray-600 dark:text-gray-400 text-lg">
         Aucun projet trouvé dans cette catégorie.
       </div>
     </motion.div>
@@ -266,7 +266,7 @@ export default function Realisations(): JSX.Element {
   return (
     <section 
       id="realisations" 
-      className="relative bg-gradient-to-br from-[#0A1A3F] via-[#0E225A] to-[#05102A] text-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100 dark:from-[#0A1A3F] dark:via-[#0E225A] dark:to-[#05102A] text-gray-900 dark:text-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden transition-colors duration-500"
       aria-labelledby="realisations-title"
     >
       <div className="max-w-7xl mx-auto relative z-10">
@@ -277,21 +277,21 @@ export default function Realisations(): JSX.Element {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-sm font-medium backdrop-blur-sm mb-6">
-            <Eye className="w-4 h-4" aria-hidden="true" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-400/30 text-blue-700 dark:text-blue-300 text-sm font-medium backdrop-blur-sm mb-6">
+            <Eye className="w-4 h-4 text-blue-600 dark:text-blue-400" aria-hidden="true" />
             Notre portfolio
           </div>
           
           <h2 id="realisations-title" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
             Nos{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-500 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-500 dark:from-blue-400 dark:via-indigo-500 dark:to-emerald-400 bg-clip-text text-transparent">
               Réalisations
             </span>
           </h2>
           
-          <p className="text-gray-300 text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
             Découvrez une sélection de projets où créativité et expertise technique 
-            se rencontrent pour donner vie à des solutions digitales d&apos;exception.
+            se rencontrent pour donner vie à des solutions digitales d'exception.
           </p>
         </motion.div>
 
@@ -325,11 +325,11 @@ export default function Realisations(): JSX.Element {
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <div className="bg-gradient-to-r from-blue-500/10 to-emerald-400/10 rounded-2xl p-8 border border-white/10 backdrop-blur-sm max-w-4xl mx-auto">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+          <div className="bg-gradient-to-r from-blue-100 to-emerald-100 dark:from-blue-500/10 dark:to-emerald-400/10 rounded-2xl p-8 border border-gray-200 dark:border-white/10 backdrop-blur-sm max-w-4xl mx-auto">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-800 dark:text-white">
               Prêt à donner vie à votre projet ?
             </h3>
-            <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
               Rejoignez nos clients satisfaits et transformons vos idées en réalité digitale.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -342,7 +342,7 @@ export default function Realisations(): JSX.Element {
               </a>
               <a
                 href="#projets"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white font-medium transition-all duration-300"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl border border-gray-300 dark:border-white/20 bg-white dark:bg-white/5 hover:bg-gray-50 dark:hover:bg-white/10 text-gray-700 dark:text-white font-medium transition-all duration-300"
               >
                 Voir tous les projets
               </a>
@@ -352,15 +352,15 @@ export default function Realisations(): JSX.Element {
       </div>
 
       <div 
-        className="absolute top-1/4 -left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" 
+        className="absolute top-1/4 -left-20 w-72 h-72 bg-blue-400/20 dark:bg-blue-500/10 rounded-full blur-3xl pointer-events-none" 
         aria-hidden="true"
       />
       <div 
-        className="absolute bottom-1/4 -right-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" 
+        className="absolute bottom-1/4 -right-20 w-96 h-96 bg-emerald-300/20 dark:bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" 
         aria-hidden="true"
       />
       <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-400/10 dark:bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" 
         aria-hidden="true"
       />
     </section>

@@ -8,6 +8,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import Logo from '../assets/image/logo_afryzza.png';
+
 const Footer: React.FC = () => {
   const socialLinks = [
     {
@@ -20,23 +21,19 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-slate-800 text-gray-300 text-sm ">
+    <footer className="bg-slate-800 mb-1 text-gray-300 text-sm w-full"> {/* Ajout de w-full */}
       <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-slate-700">
         {/* Bloc gauche : logo + slogan */}
-    <div className="text-center md:text-left">
-  {/* Logo */}
-  <img
-    src={Logo} 
-    alt="Afryzza Logo"
-    className="mx-auto md:mx-0 w-28 h-auto" //
-  />
-
-  {/* Slogan */}
-  <p className="text-teal-400 italic mt-2">
-    "Nous donnons vie à votre idée."
-  </p>
-</div>
-
+        <div className="text-center md:text-left">
+          <img
+            src={Logo} 
+            alt="Afryzza Logo"
+            className="mx-auto md:mx-0 w-28 h-auto"
+          />
+          <p className="text-teal-400 italic mt-2">
+            "Nous donnons vie à votre idée."
+          </p>
+        </div>
 
         {/* Bloc central : liens rapides */}
         <ul className="flex flex-wrap justify-center gap-4 text-gray-400">
@@ -95,37 +92,34 @@ const Footer: React.FC = () => {
             </a>
           </div>
 
- {/* Réseaux sociaux */}
-<div className="flex space-x-3 mt-2">
-  {socialLinks.map((social, i) => {
-    const Icon = social.icon;
+          {/* Réseaux sociaux */}
+          <div className="flex space-x-3 mt-2">
+            {socialLinks.map((social, i) => {
+              const Icon = social.icon;
+              let iconColor = "";
+              if (social.label === "Facebook") iconColor = "#1877F2";
+              if (social.label === "LinkedIn") iconColor = "#0A66C2";
+              if (social.label === "Instagram") iconColor = "#E1306C";
 
-    // Couleur officielle pour l'icône
-    let iconColor = "";
-    if (social.label === "Facebook") iconColor = "#1877F2"; // bleu Facebook
-    if (social.label === "LinkedIn") iconColor = "#0A66C2"; // bleu LinkedIn
-    if (social.label === "Instagram") iconColor = "#E1306C"; // rose Instagram
-
-    return (
-      <a
-        key={i}
-        href={social.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={social.label}
-        className="p-2 bg-slate-700 rounded-full hover:bg-gradient-to-r hover:from-blue-500 hover:via-indigo-500 hover:to-emerald-400 transition-all"
-      >
-        <Icon size={18} color={iconColor} />
-      </a>
-    );
-  })}
-</div>
-
+              return (
+                <a
+                  key={i}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="p-2 bg-slate-700 rounded-full hover:bg-gradient-to-r hover:from-blue-500 hover:via-indigo-500 hover:to-emerald-400 transition-all"
+                >
+                  <Icon size={18} color={iconColor} />
+                </a>
+              );
+            })}
+          </div>
         </div>
       </div>
 
       {/* Ligne du bas */}
-      <div className="text-center py-4 border-t border-slate-700 text-gray-400">
+      <div className="text-center py-4 border-t border-slate-700 text-gray-400 w-full"> {/* Ajout de w-full */}
         <p>© {new Date().getFullYear()} Afryzza — Tous droits réservés</p>
       </div>
     </footer>

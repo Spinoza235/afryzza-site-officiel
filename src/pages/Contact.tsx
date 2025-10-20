@@ -42,29 +42,28 @@ const Contact: React.FC = () => {
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center px-4 py-16"
-      style={{ backgroundColor: "#0A1A3F" }}
+      className="min-h-screen flex flex-col items-center justify-center px-4 py-16 bg-white dark:bg-[#0A1A3F] transition-colors duration-500"
     >
-      <h1 className="text-3xl md:text-4xl font-bold text-white mb-10 text-center">
+      <h1 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-10 text-center">
         Contactez-nous
       </h1>
 
       <div className="w-full max-w-6xl flex flex-col md:flex-row gap-10">
         {/* Texte à gauche */}
-        <div className="md:w-1/2 text-gray-300 flex flex-col justify-center space-y-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+        <div className="md:w-1/2 text-gray-600 dark:text-gray-300 flex flex-col justify-center space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white">
             Vous avez un projet ou une idée ?
           </h2>
           <p className="text-lg md:text-xl">
             Que ce soit une question, un projet digital, ou simplement envie
-            d’échanger, nous sommes là pour vous écouter.
+            d'échanger, nous sommes là pour vous écouter.
           </p>
           <p className="text-lg md:text-xl">
             Remplissez le formulaire ci-dessous ou contactez-nous directement,
             et faisons avancer vos idées ensemble.
           </p>
-          <p className="text-lg md:text-xl italic text-teal-400">
-            Votre succès commence par une conversation — n’attendez plus pour
+          <p className="text-lg md:text-xl italic text-emerald-600 dark:text-teal-400">
+            Votre succès commence par une conversation — n'attendez plus pour
             nous rejoindre !
           </p>
         </div>
@@ -72,10 +71,10 @@ const Contact: React.FC = () => {
         {/* Formulaire à droite */}
         <form
           onSubmit={handleSubmit}
-          className="md:w-1/2 bg-[#081233] p-8 md:p-10 rounded-xl shadow-xl flex flex-col gap-6"
+          className="md:w-1/2 bg-gray-50 dark:bg-[#081233] p-8 md:p-10 rounded-xl shadow-xl flex flex-col gap-6 border border-gray-200 dark:border-gray-700"
         >
           <div className="flex flex-col">
-            <label className="text-gray-300 mb-2" htmlFor="name">
+            <label className="text-gray-700 dark:text-gray-300 mb-2 font-medium" htmlFor="name">
               Nom
             </label>
             <input
@@ -85,13 +84,13 @@ const Contact: React.FC = () => {
               value={form.name}
               onChange={handleChange}
               required
-              className="px-4 py-3 rounded-lg bg-[#0D1A3F] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-3 rounded-lg bg-white dark:bg-[#0D1A3F] text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-300 dark:border-gray-600 transition-colors duration-300"
               placeholder="Votre nom"
             />
           </div>
 
           <div className="flex flex-col">
-            <label className="text-gray-300 mb-2" htmlFor="email">
+            <label className="text-gray-700 dark:text-gray-300 mb-2 font-medium" htmlFor="email">
               Email
             </label>
             <input
@@ -101,13 +100,13 @@ const Contact: React.FC = () => {
               value={form.email}
               onChange={handleChange}
               required
-              className="px-4 py-3 rounded-lg bg-[#0D1A3F] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-3 rounded-lg bg-white dark:bg-[#0D1A3F] text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-300 dark:border-gray-600 transition-colors duration-300"
               placeholder="Votre email"
             />
           </div>
 
           <div className="flex flex-col">
-            <label className="text-gray-300 mb-2" htmlFor="message">
+            <label className="text-gray-700 dark:text-gray-300 mb-2 font-medium" htmlFor="message">
               Message
             </label>
             <textarea
@@ -117,7 +116,7 @@ const Contact: React.FC = () => {
               onChange={handleChange}
               required
               rows={6}
-              className="px-4 py-3 rounded-lg bg-[#0D1A3F] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+              className="px-4 py-3 rounded-lg bg-white dark:bg-[#0D1A3F] text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-300 dark:border-gray-600 resize-none transition-colors duration-300"
               placeholder="Votre message..."
             />
           </div>
@@ -131,7 +130,7 @@ const Contact: React.FC = () => {
           </button>
 
           {success && (
-            <p className="text-green-400 mt-2 text-center">
+            <p className="text-green-600 dark:text-green-400 mt-2 text-center font-medium">
               Merci ! Votre message a été envoyé avec succès.
             </p>
           )}

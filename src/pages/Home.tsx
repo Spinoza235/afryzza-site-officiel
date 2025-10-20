@@ -6,7 +6,7 @@ import FAQ from "../components/FAQ";
 
 export default function Home() {
   return (
-    <main className="bg-[#0A1A3F] text-white overflow-hidden">
+    <main className="dark:bg-[#0A1A3F] bg-gray-50 overflow-hidden">
       <Hero />
       <Pricing />
       <Testimonials />

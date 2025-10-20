@@ -1,7 +1,11 @@
-
 import { Card, CardContent, CardDescription, CardHeader } from "./ui/card";
 import { Button } from "./ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./ui/accordion";
 import { Badge } from "./ui/badge";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
@@ -27,10 +31,8 @@ export function ServiceCard({
   pricing,
   imageUrl,
 }: ServiceCardProps) {
-
-
   return (
-    <Card className="flex flex-col justify-between overflow-hidden hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 border-white/10 bg-card h-full">
+    <Card className="flex flex-col justify-between overflow-hidden hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/10 transition-all duration-300 border-gray-200/50 dark:border-white/10 bg-white dark:bg-transparent h-full">
       {/* Image de couverture */}
       <div className="relative h-48 overflow-hidden">
         <ImageWithFallback
@@ -50,11 +52,13 @@ export function ServiceCard({
 
       {/* Contenu principal */}
       <CardHeader>
-        <CardDescription className="text-white/70">{description}</CardDescription>
+        <CardDescription className="text-gray-600 dark:text-white/70">
+          {description}
+        </CardDescription>
         <div className="flex items-center justify-between pt-2">
           <Badge
             variant="secondary"
-            className="bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-emerald-400/20 text-white border-white/10"
+            className="bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-emerald-400/20 text-gray-700 dark:text-white border-gray-300 dark:border-white/10"
           >
             {pricing}
           </Badge>
@@ -64,10 +68,15 @@ export function ServiceCard({
       {/* Contenu détaillé */}
       <CardContent className="flex flex-col justify-between flex-1 space-y-4">
         <div>
-          <h4 className="mb-3 text-white font-semibold">Principales fonctionnalités</h4>
+          <h4 className="mb-3 text-gray-900 dark:text-white font-semibold">
+            Principales fonctionnalités
+          </h4>
           <ul className="space-y-2">
             {features.map((feature, index) => (
-              <li key={index} className="flex items-start gap-2 text-white/60">
+              <li
+                key={index}
+                className="flex items-start gap-2 text-gray-600 dark:text-white/60"
+              >
                 <span className="bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-400 bg-clip-text text-transparent mt-1">
                   •
                 </span>
@@ -79,8 +88,11 @@ export function ServiceCard({
 
         {/* Accordéon des étapes */}
         <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="procedure" className="border-white/10">
-            <AccordionTrigger className="text-white hover:text-white/80">
+          <AccordionItem
+            value="procedure"
+            className="border-gray-200 dark:border-white/10"
+          >
+            <AccordionTrigger className="text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-white/80">
               Voir le processus
             </AccordionTrigger>
             <AccordionContent>
@@ -91,8 +103,12 @@ export function ServiceCard({
                       {index + 1}
                     </div>
                     <div className="flex-1">
-                      <h5 className="mb-1 text-white font-medium">{procedure.step}</h5>
-                      <p className="text-white/60">{procedure.description}</p>
+                      <h5 className="mb-1 text-gray-900 dark:text-white font-medium">
+                        {procedure.step}
+                      </h5>
+                      <p className="text-gray-600 dark:text-white/60">
+                        {procedure.description}
+                      </p>
                     </div>
                   </div>
                 ))}

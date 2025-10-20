@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom'
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
    <StrictMode>
-        <AppTheme /> {/* 🌗 Active le dark/light mode global */}
+      <AppTheme /> {/* 🌗 Active le dark/light mode global */}
     <App />
   </StrictMode>,
   </BrowserRouter>
